@@ -9,7 +9,7 @@
 
 	<dubbo:registry address="N/A" />
 	
-	<dubbo:protocol name="http" port="8080" server="servlet" contextpath="http" />
+	<dubbo:protocol name="http" port="8080" server="jetty" contextpath="http" />
 
 	<bean id="helloService" class="com.dubbo.demo.impl.HelloServiceImpl"/>
 

@@ -5,7 +5,7 @@ Run Provider
 ---------------------
 
 ```bash
-mvn jetty:run
+mvn exec:java -Dexec.mainClass=com.dubbo.demo.provider.ProviderMain
 ```
 
 Run Consumer
