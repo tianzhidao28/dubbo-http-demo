@@ -12,7 +12,7 @@ Run Consumer
 ----------------------
 
 ```bash
-mvn exec:java -Dexec.mainClass=com.dubbo.demo.consumer.ConsumerMain
+mvn exec:java -Dexec.mainClass=ConsumerMain
 ```
 
 Related Documents
