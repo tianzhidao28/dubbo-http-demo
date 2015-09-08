@@ -15,7 +15,7 @@ public class Sms {
     private Date createTime;
     // 短信内容
     private String content;
-    // 短信分类
+    // 短信分类  默认0
     private Integer type;
     // 发送时间或者预定的发送时间
     private Date sendTime;

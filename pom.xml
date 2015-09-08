@@ -7,16 +7,36 @@
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
 	<name>dubbo-http Maven Webapp</name>
+
+    <properties>
+        <junit.version>4.11</junit.version>
+        <log4j.version>1.2.17</log4j.version>
+        <slf4j.version>1.7.5</slf4j.version>
+        <xstream.version>1.4.8</xstream.version>
+        <commons-lang3.version>3.1</commons-lang3.version>
+        <commons-beanutils.version>1.8.3</commons-beanutils.version>
+        <gson.version>2.2.4</gson.version>
+        <guava.version>16.0.1</guava.version>
+        <!--
+        <spring.version>4.0.5.RELEASE</spring.version>
+        -->
+        <spring.version>3.2.13.RELEASE</spring.version>
+
+        <dubbo.version>2.8.4</dubbo.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>dubbo</artifactId>
             <version>${dubbo.version}</version>
             <exclusions>
+<!--
                 <exclusion>
                     <groupId>org.springframework</groupId>
                     <artifactId>spring</artifactId>
                 </exclusion>
+-->
             </exclusions>
         </dependency>
 
@@ -57,7 +77,7 @@
         </dependency>
 
         <!-- spring -->
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
             <version>${spring.version}</version>
@@ -79,39 +99,30 @@
             <artifactId>spring-orm</artifactId>
             <version>${spring.version}</version>
         </dependency>
-        <!-- Needed for XML View (with JAXB2) -->
+        &lt;!&ndash; Needed for XML View (with JAXB2) &ndash;&gt;
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-oxm</artifactId>
             <version>${spring.version}</version>
         </dependency>
+        -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
             <scope>test</scope>
             <version>${spring.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.xmlbeans</groupId>
+            <artifactId>xmlbeans</artifactId>
+            <version>2.3.0</version>
+        </dependency>
     </dependencies>
     <url>http://maven.apache.org</url>
 
-    <properties>
-		<junit.version>4.11</junit.version>
-		<log4j.version>1.2.17</log4j.version>
-		<slf4j.version>1.7.5</slf4j.version>
-		<xstream.version>1.4.8</xstream.version>
-		<commons-lang3.version>3.1</commons-lang3.version>
-		<commons-beanutils.version>1.8.3</commons-beanutils.version>
-		<gson.version>2.2.4</gson.version>
-        <guava.version>16.0.1</guava.version>
-<!--
-		<spring.version>4.0.5.RELEASE</spring.version>
--->
-		<spring.version>3.2.13.RELEASE</spring.version>
-
-		<dubbo.version>2.4.10</dubbo.version>
-	</properties>
 	<build>
-		<finalName>dubbo-ws</finalName>
+		<finalName>sms-demo</finalName>
 
 		<plugins>
 			<plugin>

@@ -6,18 +6,11 @@
 	   http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd
 	   ">
 
-	<dubbo:application name="ws-demo" />
+	<dubbo:application name="sms-demo" />
 
 	<dubbo:registry address="N/A" />
 	
 	<dubbo:protocol name="http" port="8080" server="servlet" contextpath="http" />
-    <bean id="smsHttpClient" class="cn.jpush.services.sms.core.impl.SmsHttpClient"></bean>
-	<bean id="helloService" class="cn.jpush.services.sms.impl.HelloServiceImpl"/>
-	<bean id="smsService" class="cn.jpush.services.sms.impl.SmsServiceImpl" >
-        <property name="smsClient" ref="smsHttpClient"></property>
-    </bean>
 
-	<dubbo:service interface="cn.jpush.services.sms.HelloService" version="1.0.0"
-				   protocol="http" ref="helloService"/>
 	<dubbo:service interface="cn.jpush.services.sms.SmsService" ref="smsService"></dubbo:service>
 </beans>

@@ -8,7 +8,7 @@ import java.util.Date;
 /**
  * Created by rocyuan on 2015/9/3.
  */
-//@Service("smsHttpCLient")
+@Service
 public class SmsHttpClient implements SmsClient {
 
     @Override

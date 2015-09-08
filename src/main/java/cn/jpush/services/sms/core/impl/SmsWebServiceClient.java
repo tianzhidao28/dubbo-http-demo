@@ -1,6 +1,7 @@
 package cn.jpush.services.sms.core.impl;
 
 import cn.jpush.services.sms.core.SmsClient;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 
@@ -8,6 +9,7 @@ import java.util.Date;
  * 使用WebService实现的请求方法
  * Created by rocyuan on 2015/9/3.
  */
+@Service
 public class SmsWebServiceClient implements SmsClient {
 
     @Override

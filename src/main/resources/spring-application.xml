@@ -12,7 +12,7 @@
        default-lazy-init="false">
  
  	<!-- 使用Spring组件扫描的方式来实现自动注入bean -->
-	<context:component-scan base-package="cn.jpush.services.sms" >
+	<context:component-scan base-package="cn.jpush.services.sms" name-generator="cn.jpush.services.sms.util.spring.beans.RocAnnotationBeanNameGenerator" >
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 		<context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice" />
 	</context:component-scan>

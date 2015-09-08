@@ -1,6 +1,6 @@
 package cn.jpush.services.sms.consumer;
 
-import cn.jpush.services.sms.HelloService;
+import cn.jpush.services.sms.SmsService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -11,11 +11,11 @@ public class ConsumerMain {
         ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("spring-consumer.xml");
         classPathXmlApplicationContext.start();
 
-        HelloService helloService = (HelloService) classPathXmlApplicationContext.getBean("helloService");
-        String world = helloService.hello("World");
+        SmsService smsService = classPathXmlApplicationContext.getBean("smsService",SmsService.class);
+
+        smsService.send("13349932163","text");
 
         System.out.println("=====================================");
-        System.out.println(world);
         System.out.println("=====================================");
     }
 }
