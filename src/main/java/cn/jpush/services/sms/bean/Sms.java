@@ -25,6 +25,8 @@ public class Sms {
     private boolean reSend;
     // 附加参数;预留用途
     private String extra;
+    // 发送客户端的IP地址
+    private String clientIP;
 
     private Sms(Builder builder){
         this.id = builder.id;
@@ -34,7 +36,9 @@ public class Sms {
         this.sendTime = builder.sendTime;
         this.sendStatus = builder.sendStatus;
         this.reSend = builder.reSend;
-        this.extra = builder.extra;
+        this.extra =  builder.extra;
+        this.clientIP= builder.clientIP;
+
     }
 
     public static class Builder {
@@ -46,6 +50,7 @@ public class Sms {
         private Integer sendStatus;
         private boolean reSend;
         private String extra;
+        private String clientIP;
 
         public Builder(String content){
             Date now = new Date();
@@ -79,6 +84,10 @@ public class Sms {
             return this;
         }
 
+        public Builder setClientIP(String clientIP){
+            this.clientIP = clientIP;
+            return this;
+        }
         public Builder setSendTime(Date sendTime) {
             this.sendTime = sendTime;
             return this;
