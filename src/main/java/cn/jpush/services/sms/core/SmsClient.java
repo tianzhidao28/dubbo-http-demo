@@ -9,19 +9,19 @@ import java.util.Date;
  */
 public interface SmsClient {
 
-    void send(String phone, String content);
+    boolean send(String phone, String content);
 
-    void send(String phone, String content, boolean reSend);
+    boolean send(String phone, String content, boolean reSend);
 
-    void sendAtTime(String phone, String content, Date sendTime);
+    boolean sendAtTime(String phone, String content, Date sendTime);
 
-    void sendAsync(String phone, String content);
+    boolean sendAsync(String phone, String content);
 
-    void send(String phone[], String content);
+    boolean send(String phone[], String content);
 
-    void send(String phone[], String content, boolean reSend);
+    boolean send(String phone[], String content, boolean reSend);
 
-    void sendAtTime(String phone[], String content, Date sendTime);
+    boolean sendAtTime(String phone[], String content, Date sendTime);
 
 
 }

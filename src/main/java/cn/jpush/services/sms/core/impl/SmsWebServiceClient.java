@@ -13,37 +13,43 @@ import java.util.Date;
 public class SmsWebServiceClient implements SmsClient {
 
     @Override
-    public void send(String phone, String content) {
-        
+    public boolean send(String phone, String content) {
+        return true;
     }
 
     @Override
-    public void send(String phone, String content, boolean reSend) {
+    public boolean send(String phone, String content, boolean reSend) {
 
+        return true;
     }
 
     @Override
-    public void sendAtTime(String phone, String content, Date sendTime) {
+    public boolean sendAtTime(String phone, String content, Date sendTime) {
 
+        return true;
     }
 
     @Override
-    public void sendAsync(String phone, String content) {
+    public boolean sendAsync(String phone, String content) {
 
+        return true;
     }
 
     @Override
-    public void send(String[] phone, String content) {
+    public boolean send(String[] phone, String content) {
 
+        return true;
     }
 
     @Override
-    public void send(String[] phone, String content, boolean reSend) {
+    public boolean send(String[] phone, String content, boolean reSend) {
 
+        return true;
     }
 
     @Override
-    public void sendAtTime(String[] phone, String content, Date sendTime) {
+    public boolean sendAtTime(String[] phone, String content, Date sendTime) {
 
+        return true;
     }
 }

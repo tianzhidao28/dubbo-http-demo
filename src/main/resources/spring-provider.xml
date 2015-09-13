@@ -11,6 +11,9 @@
 	<dubbo:registry address="N/A" />
 	
 	<dubbo:protocol name="http" port="8080" server="servlet" contextpath="http" />
+	<!--<dubbo:protocol name="rest" port="8888" server="tjws" contextpath="rest"/>-->
+	<dubbo:protocol name="rest" port="8888" contextpath="rest"/>
 
-	<dubbo:service interface="cn.jpush.services.sms.SmsService" ref="smsService"></dubbo:service>
+	<dubbo:service interface="cn.jpush.services.sms.SmsService" ref="smsService" protocol="http"></dubbo:service>
+	<dubbo:service interface="cn.jpush.services.sms.SmsRestService" ref="smsRestService" protocol="rest" validation="true" timeout="2000"></dubbo:service>
 </beans>
