@@ -16,8 +16,8 @@ public abstract class AbstractSmsSender{
 
     private Logger log = LoggerFactory.getLogger(this.getClass());
 
-    @Autowired
-    private SmsDao smsDao;
+    //@Autowired
+    //private SmsDao smsDao;
     /**
      * 检测短信的IP是否是黑名单和号码是否合法,黑名单
      * @return true if valid else throws exception
@@ -31,7 +31,7 @@ public abstract class AbstractSmsSender{
      * @param sms
      */
     private void persistence(Sms sms){
-        smsDao.insert(sms);
+        //smsDao.insert(sms);
         log.info("sms send {} -> {}: ",sms.getPhone(),sms.getContent());
     }
     public boolean sendSms(Sms sms) {

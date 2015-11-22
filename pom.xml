@@ -6,7 +6,7 @@
 	<artifactId>jpush-sms</artifactId>
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>dubbo-http Maven Webapp</name>
+	<name>dubbo-http</name>
 
     <properties>
         <junit.version>4.11</junit.version>
@@ -20,12 +20,12 @@
         <mybatis.version>3.2.8</mybatis.version>
         <mybatis-spring.version>1.2.2</mybatis-spring.version>
         <mysql.version>5.1.22</mysql.version>
-        <!--
-        <spring.version>4.0.5.RELEASE</spring.version>
-        -->
-        <spring.version>3.2.9.RELEASE</spring.version>
 
-        <dubbo.version>2.8.4</dubbo.version>
+        <spring.version>4.1.4.RELEASE</spring.version>
+
+        <!--<spring.version>3.2.9.RELEASE</spring.version>-->
+
+        <dubbo.version>2.5.3</dubbo.version>
 
         <validation.version>1.0.0.GA</validation.version>
         <hibernate.validator.version>4.2.0.Final</hibernate.validator.version>
@@ -54,13 +54,18 @@
             <artifactId>dubbo</artifactId>
             <version>${dubbo.version}</version>
             <exclusions>
-<!--
                 <exclusion>
                     <groupId>org.springframework</groupId>
-                    <artifactId>spring</artifactId>
+                    <artifactId>*</artifactId>
                 </exclusion>
--->
+
             </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.sgroschupf</groupId>
+            <artifactId>zkclient</artifactId>
+            <version>0.1</version>
         </dependency>
 
         <dependency>
@@ -100,12 +105,6 @@
         </dependency>
 
 
-        <!-- Rest  -->
-        <dependency>
-            <groupId>javax.ws.rs</groupId>
-            <artifactId>javax.ws.rs-api</artifactId>
-            <version>2.0</version>
-        </dependency>
 
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -113,36 +112,7 @@
             <version>${servlet.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.jboss.resteasy</groupId>
-            <artifactId>resteasy-jdk-http</artifactId>
-            <version>3.0.7.Final</version>
-        </dependency>
 
-        <dependency>
-            <groupId>org.jboss.resteasy</groupId>
-            <artifactId>resteasy-jackson-provider</artifactId>
-            <version>3.0.7.Final</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.jboss.resteasy</groupId>
-            <artifactId>resteasy-jaxb-provider</artifactId>
-            <version>3.0.7.Final</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>org.jboss.resteasy</groupId>
-            <artifactId>resteasy-jaxrs</artifactId>
-            <version>3.0.7.Final</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.jboss.resteasy</groupId>
-            <artifactId>resteasy-client</artifactId>
-            <version>3.0.7.Final</version>
-        </dependency>
 
 
         <dependency>
@@ -174,6 +144,25 @@
             <artifactId>spring-jdbc</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson_version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${jackson_version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson_version}</version>
+        </dependency>
+
         <!--
         <dependency>
             <groupId>org.springframework</groupId>
@@ -219,37 +208,6 @@
         </dependency>
 
 
-        <!--webservice 调用需要的jar -->
-        <dependency>
-            <groupId>org.apache.axis</groupId>
-            <artifactId>axis</artifactId>
-            <version>1.4</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.axis</groupId>
-            <artifactId>axis-jaxrpc</artifactId>
-            <version>1.4</version>
-        </dependency>
-
-        <dependency>
-            <groupId>commons-discovery</groupId>
-            <artifactId>commons-discovery</artifactId>
-            <version>0.2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.axis</groupId>
-            <artifactId>axis-saaj</artifactId>
-            <version>1.4</version>
-        </dependency>
-
-        <dependency>
-            <groupId>wsdl4j</groupId>
-            <artifactId>wsdl4j</artifactId>
-            <version>1.6.2</version>
-        </dependency>
-        <!--webservice 调用需要的jar -->
 
     </dependencies>
     <url>http://maven.apache.org</url>
@@ -290,11 +248,6 @@
 				</configuration>
 			</plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-archetype-plugin</artifactId>
-                <version>2.4</version>
-            </plugin>
 		</plugins>
 	</build>
 </project>

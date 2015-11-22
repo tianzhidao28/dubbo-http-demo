@@ -1,7 +1,5 @@
 package cn.jpush.services.sms.rest;
 
-import org.codehaus.jackson.annotate.JsonIgnore;
-
 /**
  * 统一的API返回对象
  * @author admin@rocyuan.com
